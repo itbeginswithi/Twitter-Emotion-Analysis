@@ -1,8 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
-    isLoading: false, 
-    error: ''
+    isLoading: false
 };
 
 const searchbar = createSlice({
@@ -11,9 +10,6 @@ const searchbar = createSlice({
     reducers: {
         setIsLoading(state, action){
             state.isLoading = action.payload;
-        },
-        setError(state, action){ 
-            state.error = action.payload.message;
         }
     },
 })

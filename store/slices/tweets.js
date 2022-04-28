@@ -3,8 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     loading: false,
     displayTweetBox: false,
-    tweetDataExists: false, 
-    error: ''
+    tweetDataExists: false
 };
 
 const tweetBoxSlice = createSlice({
@@ -19,9 +18,6 @@ const tweetBoxSlice = createSlice({
         },
         setIsLoading(state, action){
             state.loading = action.payload;
-        },
-        setError(state, action){ 
-            state.error = action.payload.message;
         }
     }
 });

@@ -12,16 +12,16 @@ import Error from '../Error/Error';
 
 const AnalyseTweet = () => {
   const dispatch = useDispatch();
-  const {displayTweetBox, error} = useSelector(state => state.tweetBox);
+  const {displayTweetBox} = useSelector(state => state.tweetBox);
   
   const [tweetText, setTweetText] = useState('');
-  const [analysisError, setAnalysisError] = useState(null);
   const [fetchingAnalysis, setFetchingAnalysis] = useState({});
   const [tweetAuthor, setTweetAuthor] = useState({});
   const [tweetAnalysis, setTweetAnalysis] = useState([]);
   const [tweetCreatedAt, setTweetCreatedAt] = useState('');
+  const [analysisError, setAnalysisError] = useState(null);
+  const [error, setError] = useState(null);
 
-  //! check for input fields
   const handleSubmit = async (statusId) => {
     dispatch(searchbarActions.setIsLoading(true));
 
@@ -30,9 +30,7 @@ const AnalyseTweet = () => {
     if(!fetchedTweet || fetchedTweet === undefined){
       // fetchedTweet is undefined because auth token is wrong
       dispatch(searchbarActions.setIsLoading(false));
-      dispatch(tweetsActions.setError({
-        message: 'The twitter api service is not available, try again later.'
-      }));
+      setError("The twitter api service is not available, try again later.")
       return;
     }
 
@@ -44,7 +42,7 @@ const AnalyseTweet = () => {
         errorMessage = 'No tweet was found with that id.'
       }
 
-      dispatch(tweetsActions.setError({message: errorMessage}));
+      setError(errorMessage);
  
       dispatch(tweetsActions.displayTweetBox(false));
       
@@ -58,7 +56,7 @@ const AnalyseTweet = () => {
       return;
     }
     
-    if(error) dispatch(tweetsActions.setError({message: ''}));
+    if(error) setError(null);
     const {data, includes: {users}} = fetchedTweet;
 
     setTweetText(data[0].text);
@@ -85,7 +83,7 @@ const AnalyseTweet = () => {
       body: JSON.stringify({tweet: data[0]?.text}) 
     })).json();
     
-    //! dipatch error for IBM api errors
+    //Potential IBMWatson API Errors
     if(analysis?.message){
       setFetchingAnalysis(false);
 
