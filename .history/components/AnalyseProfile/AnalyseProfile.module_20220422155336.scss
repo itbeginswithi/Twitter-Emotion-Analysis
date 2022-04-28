@@ -1,8 +1,0 @@
-@import '../../styles/abstracts/all';
-
-.flex{
-    flex-direction: row;
-    @media (max-width: 992px){
-        flex-direction: column-reverse;
-    }
-}
