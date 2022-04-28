@@ -1,0 +1,15 @@
+@import '../../styles/abstracts/all';
+
+.analyseProfile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.anayseProfile__animation,
+.analyseProfile__searchBar{
+    flex: 1;
+}
+
+

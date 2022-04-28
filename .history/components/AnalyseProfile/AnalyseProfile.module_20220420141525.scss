@@ -1,0 +1,28 @@
+@import '../../styles/abstracts/all';
+
+.analyseProfile{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.anayseProfile__animation,
+.analyseProfile__searchBar{
+    flex: 1;
+}
+
+.analyseProfile__animation{
+    position: relative;
+
+    &::after{
+        content:"";
+        @include overlay;
+    }
+
+    width: 550px;
+    height: 550px;
+    &_lottie{
+    }
+}

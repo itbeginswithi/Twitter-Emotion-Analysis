@@ -1,0 +1,15 @@
+.analyseProfile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.anayseProfile__animation,
+.analyseProfile__searchBar{
+    flex: 1;
+}
+
+.anayseProfile__animation{
+    width: 100%;
+    height: 100%;
+}

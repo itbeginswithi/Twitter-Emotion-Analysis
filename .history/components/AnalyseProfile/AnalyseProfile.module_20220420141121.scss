@@ -1,0 +1,19 @@
+@import '/.analyseProfile{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.anayseProfile__animation,
+.analyseProfile__searchBar{
+    flex: 1;
+}
+
+.anayseProfile__animation{
+    &_lottie{
+        width: 25rem;
+        height: 100%;
+    }
+}

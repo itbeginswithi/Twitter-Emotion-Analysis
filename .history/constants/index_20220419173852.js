@@ -1,0 +1,1 @@
+export {default as emotionIcons} from './emotionIcons'

@@ -1,0 +1,14 @@
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    jist
+}
+
+.left{
+    flex: 1;
+
+    & .title{
+        font-size: 5.5rem;
+    }
+}

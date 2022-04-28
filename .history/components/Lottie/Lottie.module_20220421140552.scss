@@ -1,0 +1,24 @@
+@import '../../styles/abstracts/all';
+
+.analyseProfile__animation{
+    flex: 1;
+    position: relative;
+    
+    max-width: 55rem;
+    max-height: 55rem;
+
+    &::after{
+        content:"";
+        //To stop the animation from being paused everytime it is clicked
+        @include overlay;
+    }
+
+    // & div{
+    //     max-width: 100% !important;
+    //     max-height: 100% !important;
+    // }
+
+    @media screen and (max-width: 750px){
+        max-width: 90%;
+    }
+}

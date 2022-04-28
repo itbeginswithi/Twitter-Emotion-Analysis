@@ -1,0 +1,28 @@
+@import '../../styles/abstracts/all';
+
+.analyseProfile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.anayseProfile__animation,
+.analyseProfile__searchBar{
+    flex: 1;
+}
+
+
+.analyseProfile__searchBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input{
+    border: 1px solid transparent;
+    background-color: #fff;
+    width: 80%;
+    padding: 1rem 2rem
+}

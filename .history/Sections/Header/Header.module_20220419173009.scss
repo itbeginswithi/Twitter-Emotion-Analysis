@@ -1,0 +1,22 @@
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left{
+    flex: 1;
+
+    & .title{
+        font-size: 5.5rem;
+        @include text-gradient;
+    }
+
+    & .desc { 
+        font-size: 2.4rem;
+        font-weight: 300;
+        width: 40ch;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}

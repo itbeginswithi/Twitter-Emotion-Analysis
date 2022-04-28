@@ -1,0 +1,12 @@
+@import '../../styles/abstracts/all';
+
+.error{
+    display: block;
+    color: #fff;
+    font-size: 1.3rem;
+    margin: auto 0;
+    padding: .8rem 1.5rem;
+    width: fit-content;
+    background: $error;
+    border-radius: 5rem;
+}
