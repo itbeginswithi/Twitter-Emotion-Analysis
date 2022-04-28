@@ -2,12 +2,12 @@ import React, {useState} from 'react'
 import Image from 'next/image';
 import {motion} from 'framer-motion';
 import {BsSearch} from 'react-icons/bs';
+import {AiOutlineLoading3Quarters} from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './Searchbar.module.scss';
 import Error from '../Error/Error';
 import { tweetsActions } from '../../store/slices/tweets';
-import LoadingIcon from '../../assets/LoadingIcon.svg';
 
 const Searchbar = ({children, placeholder, description, handleSubmit, searchByStatus}) => {
   const dispatch = useDispatch();
@@ -66,7 +66,9 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
           style={{cursor: 'default'}}
           type="button"
           >
-            <Image src={LoadingIcon} height='100%' width='100%' alt=''/>
+            <div className={styles.analyseProfile__searchBar_loading}>
+              <AiOutlineLoading3Quarters color="#03A7F4" size="23"/>
+            </div>
           </button>
         ) : (
           <button 
@@ -74,7 +76,7 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
             type="submit" 
             onClick={searchByStatus ? getStatusId : getUser}
           >
-            <BsSearch/>
+            <BsSearch color="#03A7F4" size="18" />
           </button>
           )
       }
