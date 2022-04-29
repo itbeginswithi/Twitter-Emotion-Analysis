@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './Searchbar.module.scss';
 import Error from '../Error/Error';
-import { tweetsActions } from '../../store/slices/tweets';
+import { tweetsActions } from '../../store/slices/tweetBox';
 
 const Searchbar = ({children, placeholder, description, handleSubmit, searchByStatus}) => {
   const dispatch = useDispatch();
@@ -51,6 +51,11 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
 
   const getUser = () => {
     //pass the query to the AnalyseProfile component
+    if(!query){
+      setError('Input field shouldn\'t be empty');
+      return;
+    }
+
     return handleSubmit(query);
   }
 
@@ -58,7 +63,14 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
     <motion.div transition={{duration: 1}} whileInView={{opacity: [0, 1]}} className={styles.analyseProfile__searchBar}>
     <h2>{description}</h2>
     <div className={styles.analyseProfile__searchBar_inputContainer}>
-      <input  className={styles.input} type="text" placeholder={placeholder} value={query} onChange={(e) => setQuery(e.target.value.trim())}/>
+      <input  
+        type="text" 
+        className={styles.input} 
+        placeholder={placeholder} 
+        value={query} 
+        onChange={(e) => setQuery(e.target.value.trim())}
+      />
+
       {
         isLoading ? (
           <button 

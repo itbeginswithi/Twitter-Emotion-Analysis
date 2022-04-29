@@ -1,12 +1,15 @@
+import { useDispatch } from 'react-redux';
+import { tweetsModalActions } from '../../../store/slices/tweetsModal';
+import { timelineActions } from '../../../store/slices/tweetsTimeline';
 import TweetsSection from './tweets-section/tweets-section';
 import styles from './twitter-timeline.module.scss';
 import UserSection from './user-section/user-section';
 
 const TwitterTimeline = () => {
+    const dispatch = useDispatch();
 
     const deactivateModal = () => {
-        // dispatch(tweetsActions.clearTweets())
-        // dispatch(tweetsActions.hideTweets())
+        dispatch(tweetsModalActions.isOpen(false));
     }
 
     return(

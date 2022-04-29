@@ -2,10 +2,9 @@ import React from 'react'
 
 import styles from './Error.module.scss';
 
-const Error = ({message}) => {
+const Error = ({message, marginTop}) => {
   return (
-    <span className={styles.error}>
-      {/* {info.name + ': ' + info.description} */}
+    <span className={marginTop ? `${styles.error} ${styles.marginTop}` : `${styles.error}`}>
       {message}
     </span>
   )

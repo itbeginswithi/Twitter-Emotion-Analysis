@@ -9,7 +9,7 @@ import styles from './TweetBox.module.scss';
 import {joy, fear, anger, sadness, disgust} from '../../constants/emotionIcons';
 import { cleanText } from "../../utils/cleanText";
 import Error from "../Error/Error";
-import { tweetsActions } from "../../store/slices/tweets";
+import { tweetsActions } from "../../store/slices/tweetBox";
 
 const LoadingEmotionResults = () => (
   <div className={styles.fetchingEmotions}>

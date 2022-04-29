@@ -6,7 +6,7 @@ import womenLottie from '../../assets/lottie/woman-twitter.json';
 import LottieAnimation from '../Lottie/Lottie';
 import Searchbar from '../Searchbar/Searchbar';
 import TweetBox from '../TweetBox/TweetBox';
-import { tweetsActions } from '../../store/slices/tweets';
+import { tweetsActions } from '../../store/slices/tweetBox';
 import { searchbarActions } from '../../store/slices/searchbar';
 import Error from '../Error/Error';
 

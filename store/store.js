@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import tweetBoxReducer from './slices/tweets';
+import tweetBoxReducer from './slices/tweetbox';
 import searchbarReducer from './slices/searchbar';
+import tweetsModalReducer from './slices/tweetsModal';
+import timelineReducer from './slices/tweetsTimeline';
 
 const store = configureStore({
     reducer: { 
         tweetBox: tweetBoxReducer,
-        searchbar: searchbarReducer
+        searchbar: searchbarReducer,
+        tweetsModal: tweetsModalReducer,
+        tweetsTimeline: timelineReducer
     }
 })
 

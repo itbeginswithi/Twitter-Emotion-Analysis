@@ -1,5 +1,5 @@
 const URL = 'https://api.twitter.com/2';
-const URLParams = 'tweet.fields=created_at&expansions=author_id&user.fields=created_at,profile_image_url&max_results=25'
+const URLParams = 'tweet.fields=created_at&expansions=author_id&user.fields=created_at,profile_image_url&max_results=15'
 
 const getUserTimeline = async (req, res) => {
     const username = req.query.username;

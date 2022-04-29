@@ -1,17 +1,14 @@
 import {useEffect} from 'react';
+import { useSelector } from 'react-redux';
 import Head from 'next/head'
-import Image from 'next/image'
-import Lottie from 'react-lottie';
 import {motion} from 'framer-motion';
 
 import styles from '../styles/Home.module.scss'
 import { Header, Search } from '../Sections';
 import TwitterTimeline from '../components/modal/twitter-timeline/twitter-timeline';
 
-
 const Home = () => {
-  const modalState = false;
-  // const modalState = useSelector(state => state.modal.isVisible);
+  const modalState = useSelector(state => state.tweetsModal.isOpen);
   
   useEffect(() => {  
     if(modalState){
@@ -25,7 +22,7 @@ const Home = () => {
     <div style={{width: '100%'}}>
       <Header/>
       <Search/>
-      {/* <TwitterTimeline/> */}
+      {modalState && <TwitterTimeline/>}
     </div>
   )
 }
