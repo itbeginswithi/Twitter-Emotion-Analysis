@@ -1,6 +1,4 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-const URL = 'https://api.twitter.com/2';
+const URL = process.env.TWITTER_API_URL;
 const URLParams = 'tweet.fields=created_at&expansions=author_id&user.fields=created_at,profile_image_url'
 
 export default async function handler(req, res) {
@@ -8,7 +6,7 @@ export default async function handler(req, res) {
   
   try {
     const myHeaders = new Headers({});
-    myHeaders.append('Authorization', 'Bearer AAAAAAAAAAAAAAAAAAAAAMhsbQEAAAAAlUTbetPFSiGXgfJzy6mMBQPnkpY%3Df41Bs2zFMBkH7rtV6tHqczQoe1i7obYoMXFoVpqGFkHY3zZVhP')
+    myHeaders.append('Authorization', `Bearer ${process.env.TWITER_API_TOKEN}`)
   
     let tweetData = await fetch(`${URL}/tweets?ids=${statusId}&${URLParams}`, {
       method: 'GET',

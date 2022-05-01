@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { tweetsModalActions } from '../../../store/slices/tweetsModal';
-import { timelineActions } from '../../../store/slices/tweetsTimeline';
 import TweetsSection from './tweets-section/tweets-section';
 import styles from './twitter-timeline.module.scss';
 import UserSection from './user-section/user-section';
@@ -17,7 +16,7 @@ const TwitterTimeline = () => {
             <div className={`${styles.loadedTweets} ${styles.glass}`} onClick={deactivateModal}>
             </div>
 
-            <div className={styles.twitter}>
+            <div className={styles.tweetsModal}>
                 <UserSection/>
                 <TweetsSection/>
             </div>  

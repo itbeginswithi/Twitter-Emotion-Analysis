@@ -2,11 +2,13 @@
 
 .error{
     display: block;
-    color: #fff;
+    width: fit-content;
     font-size: 1.3rem;
+    color: #fff;
+    text-align: center;
     margin: 0 auto;
     padding: .8rem 1.5rem;
-    width: fit-content;
+
     background: $error;
     border-radius: 5rem;
 }

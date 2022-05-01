@@ -9,7 +9,7 @@ const TweetsSection = () => {
 
     return(
         <div className={styles.tweetsSection}>
-            <h6 className={styles.title}>{TDLength >= 1 && `Latest ${TDLength} tweets `}</h6>
+            <h6 className={styles.title}>{TDLength >= 1 && `Latest ${TDLength} tweets `}</h6>    
             <ScoredTweets/>
         </div>
     )

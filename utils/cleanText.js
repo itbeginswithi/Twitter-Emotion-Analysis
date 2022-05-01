@@ -1,8 +1,9 @@
 export const cleanText = (text) => {
+    let tweetText = text;
 
-    if(text.includes("&amp;")){
-       text.replace("&amp;", '&');
+    if(tweetText.includes('&amp;')){
+       tweetText = tweetText.replaceAll('&amp;', '&');
     }
-
-    return text;
+    
+    return tweetText;
 }

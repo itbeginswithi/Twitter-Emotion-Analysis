@@ -67,26 +67,18 @@ const TweetBox = ({
   createdAt,
   tweetAnalysis,
   username,
-  userImage}) => {
-  const dispatch = useDispatch();
+  userImage,
+  tweetId,
+  }) => {
 
-  // const {
-  //   fetchingAnalysis,
-  //   tweetText, 
-  //   createdAt,
-  //   tweetAuthor: {
-  //     name: username,
-  //     profile_image_url: userImage,
-  //   },
-  //   tweetAnalysis
-  // } = useSelector(state => state.tweetBox);
+  const dispatch = useDispatch();
 
   const handleCloseTweetBox = () => {
     dispatch(tweetsActions.displayTweetBox(false))
   };
 
   return (
-    <motion className={styles.container}>
+    <div className={styles.container}>
       {showProfile && (
         <div className={styles.topSection}>
           <a href={`https://twitter.com/${username}`} target="_blank" rel="noopener noreferrer" className={`${styles.profile}`}>
@@ -107,7 +99,19 @@ const TweetBox = ({
       )}
       <div className={styles.tweet}>
         <div className={showProfile ? `${styles.tweet__text}` : `${styles.tweet__textModal}`}>
-          {tweetText && cleanText(tweetText)}
+          {tweetId ? (
+            <a 
+              href={`https://twitter.com/${username}/status/${tweetId}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.tweetLink}
+            >
+              {cleanText(tweetText)}
+            </a>
+          ) : (
+            cleanText(tweetText)
+          )
+          }
         </div>
         <div className={styles.tweet__data}>
             <ul className={styles.results__list}>
@@ -133,7 +137,7 @@ const TweetBox = ({
             <div className={styles.date}>{moment(createdAt).fromNow()}</div>
         </div>
       </div>
-    </motion>
+    </div>
   );
 };
 

@@ -1,10 +1,8 @@
 import {useEffect} from 'react';
 import { useSelector } from 'react-redux';
-import Head from 'next/head'
-import {motion} from 'framer-motion';
+import { createPortal } from 'react-dom';
 
-import styles from '../styles/Home.module.scss'
-import { Header, Search } from '../Sections';
+import { Header, AnalyseProfile, AnalyseTweet, Search } from '../Containers';
 import TwitterTimeline from '../components/modal/twitter-timeline/twitter-timeline';
 
 const Home = () => {
@@ -20,9 +18,13 @@ const Home = () => {
 
   return (
     <div style={{width: '100%'}}>
+      {modalState && (
+        createPortal(<TwitterTimeline/>, 
+          document.getElementById("modal"))
+      )}
       <Header/>
-      <Search/>
-      {modalState && <TwitterTimeline/>}
+      <AnalyseProfile/>
+      <AnalyseTweet/>
     </div>
   )
 }

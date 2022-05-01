@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import Image from 'next/image';
+import React, {useState} from 'react';
 import {motion} from 'framer-motion';
 import {BsSearch} from 'react-icons/bs';
 import {AiOutlineLoading3Quarters} from 'react-icons/ai';
@@ -19,9 +18,9 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
 
   const { isLoading } = useSelector(state => state.searchbar);
   
-  const [query, setQuery] = useState();
-  const [previousQuery, setPreviousQuery] = useState();
-  const [error, setError] = useState();
+  const [query, setQuery] = useState('');
+  const [previousQuery, setPreviousQuery] = useState('');
+  const [error, setError] = useState(null);
 
   const getStatusId = () => {
     if(!query){
@@ -55,7 +54,7 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
       setError('Input field shouldn\'t be empty');
       return;
     }
-
+    
     return handleSubmit(query);
   }
 
@@ -93,6 +92,7 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
           )
       }
     </div>
+
     {error && <Error message={error}/>}
 
     {/* Contains the tweetBox */}

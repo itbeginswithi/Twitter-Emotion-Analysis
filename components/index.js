@@ -1,2 +1,4 @@
-export {default as AnalyseProfile} from './AnalyseProfile/AnalyseProfile';
-export {default as AnalyseTweet} from './AnalyseTweet/AnalyseTweet';
+export {default as Searchbar} from './Searchbar/Searchbar';
+export {default as LottieAnimation} from './Lottie/Lottie';
+export {default as TweetBox} from './TweetBox/TweetBox';
+export {default as Error} from './Error/Error';

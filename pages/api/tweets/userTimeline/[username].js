@@ -1,12 +1,12 @@
-const URL = 'https://api.twitter.com/2';
-const URLParams = 'tweet.fields=created_at&expansions=author_id&user.fields=created_at,profile_image_url&max_results=15'
+const URL = process.env.TWITTER_API_URL;
+const URLParams = 'tweet.fields=created_at,id&expansions=author_id&user.fields=created_at,profile_image_url&exclude=replies,retweets&max_results=15'
 
 const getUserTimeline = async (req, res) => {
     const username = req.query.username;
 
     try {
         const headers = new Headers({});
-        headers.append('Authorization', 'Bearer AAAAAAAAAAAAAAAAAAAAAMhsbQEAAAAAlUTbetPFSiGXgfJzy6mMBQPnkpY%3Df41Bs2zFMBkH7rtV6tHqczQoe1i7obYoMXFoVpqGFkHY3zZVhP');
+        headers.append('Authorization', `Bearer ${process.env.TWITER_API_TOKEN}`);
     
         //get userId
         let userData = await (await fetch(`${URL}/users/by?usernames=${username}`, {
