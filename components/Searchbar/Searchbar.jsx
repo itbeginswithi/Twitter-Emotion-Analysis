@@ -16,9 +16,20 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
     tweetDataExists
   } = useSelector(state => state.tweetBox);
 
+  
   const { isLoading } = useSelector(state => state.searchbar);
   
   const [query, setQuery] = useState('');
+
+  const setQueryWithKey = (e, functionToCall) => {
+    if(e.charCode === 13){
+      if (functionToCall === 'getStatusId') getStatusId();
+      if (functionToCall === 'getUser') getUser();
+    }
+
+    return;
+  }
+
   const [previousQuery, setPreviousQuery] = useState('');
   const [error, setError] = useState(null);
 
@@ -68,6 +79,7 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
         placeholder={placeholder} 
         value={query} 
         onChange={(e) => setQuery(e.target.value.trim())}
+        onKeyPress={(e) => setQueryWithKey(e, searchByStatus ? 'getStatusId' : 'getUser')}
       />
 
       {
