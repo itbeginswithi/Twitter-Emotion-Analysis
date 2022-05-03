@@ -20,7 +20,7 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
   
   const [query, setQuery] = useState('');
 
-  const setQueryWithKey = (e, functionToCall) => {
+  const submitQueryWithKey = (e, functionToCall) => {
     if(e.charCode === 13){
       if (functionToCall === 'getStatusId') getStatusId();
       if (functionToCall === 'getUser') getUser();
