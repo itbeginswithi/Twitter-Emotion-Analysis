@@ -135,8 +135,9 @@ const ProfileSearch = () => {
         description="Search By profile or Tag" 
         placeholder="@elonmusk or #evs" 
         handleSubmit={handleSubmit}
-      />
-      {error && <Error message={error} marginTop/>}
+      >
+        {error && <Error message={error} marginTop/>}
+      </Searchbar>
     </div>
   )
 }

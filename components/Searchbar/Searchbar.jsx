@@ -95,7 +95,7 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
 
     {error && <Error message={error}/>}
 
-    {/* Contains the tweetBox */}
+    {/* Contains the <tweetBox/> and <Error/> */}
     {children}
   </motion.div>
   )
