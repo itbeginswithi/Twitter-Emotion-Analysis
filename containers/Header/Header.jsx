@@ -9,16 +9,20 @@ import twitterLogo from '../../assets/twitter-logo.svg';
 
 const Header = () => {
   return (
-    <div className={`${styles.container} ${styles.flex} flex f-height section-padding`}>
-      <motion.div className={styles.left} transition={{duration: 1}} whileInView={{opacity: [0, 1], x: ['-100px', '0px']}}>
+    <motion.div 
+      className={`${styles.container} 
+      ${styles.flex} flex f-height section-padding`}  
+      transition={{duration: 1}} 
+      whileInView={{opacity: [0, 1]}}>
+      <div className={styles.left}>
         <h2 className={styles.left__title}>Twitter Emotion Analysis</h2>
         <p className={styles.left__desc}>A topic is all you need to analyse the emotions displayed in any public tweet.</p>
         <div className={styles.left__actions}>
           <Link className={styles.left__actions_btn} to='analyseProfile' duration={500}>Search By Profile or Tag</Link>
           <Link className={styles.left__actions_btn} to='analyseTweet' duration={500}>Analyse Select Tweet Post</Link>
         </div>
-      </motion.div>
-      <motion.div className={styles.right} transition={{duration: 1}} whileInView={{opacity: [0, 1], x: ['100px', '0px']}}>
+      </div>
+      <div className={styles.right} transition={{duration: 1}} whileInView={{opacity: [0, 1], x: ['100px', '0px']}}>
         <div className={styles.right__twitterLogo}>
           <Image src={twitterLogo} alt="Twitter Icon" draggable={false} width={200} height={200} />
         </div>
@@ -39,8 +43,8 @@ const Header = () => {
             <Image src={fear} alt="scared face" title="scared face" draggable={false} width={65} height={65}/>
           </div>
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   )
 }
 
