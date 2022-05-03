@@ -79,7 +79,7 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
         placeholder={placeholder} 
         value={query} 
         onChange={(e) => setQuery(e.target.value.trim())}
-        onKeyPress={(e) => setQueryWithKey(e, searchByStatus ? 'getStatusId' : 'getUser')}
+        onKeyPress={(e) => submitQueryWithKey(e, searchByStatus ? 'getStatusId' : 'getUser')}
       />
 
       {
