@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image';
-import { motion } from 'framer-motion'
 import {Link} from 'react-scroll'
 
 import styles from './Header.module.scss'
@@ -9,11 +8,9 @@ import twitterLogo from '../../assets/twitter-logo.svg';
 
 const Header = () => {
   return (
-    <motion.div 
+    <div 
       className={`${styles.container} 
-      ${styles.flex} flex f-height section-padding`}  
-      transition={{duration: 1}} 
-      whileInView={{opacity: [0, 1]}}>
+      ${styles.flex} flex f-height section-padding`}>
       <div className={styles.left}>
         <h2 className={styles.left__title}>Twitter Emotion Analysis</h2>
         <p className={styles.left__desc}>A topic is all you need to analyse the emotions displayed in any public tweet.</p>
@@ -22,7 +19,7 @@ const Header = () => {
           <Link className={styles.left__actions_btn} to='analyseTweet' duration={500}>Analyse Select Tweet Post</Link>
         </div>
       </div>
-      <div className={styles.right} transition={{duration: 1}} whileInView={{opacity: [0, 1], x: ['100px', '0px']}}>
+      <div className={styles.right}>
         <div className={styles.right__twitterLogo}>
           <Image src={twitterLogo} alt="Twitter Icon" draggable={false} width={200} height={200} />
         </div>
@@ -44,7 +41,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

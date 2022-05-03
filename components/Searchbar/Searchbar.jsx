@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {motion} from 'framer-motion';
 import {BsSearch} from 'react-icons/bs';
 import {AiOutlineLoading3Quarters} from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
@@ -70,7 +69,7 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
   }
 
   return (
-    <motion.div transition={{duration: 1}} whileInView={{opacity: [0, 1]}} className={styles.analyseProfile__searchBar}>
+    <div className={styles.analyseProfile__searchBar}>
     <h2>{description}</h2>
     <div className={styles.analyseProfile__searchBar_inputContainer}>
       <input  
@@ -109,7 +108,7 @@ const Searchbar = ({children, placeholder, description, handleSubmit, searchBySt
 
     {/* Contains the <tweetBox/> and <Error/> */}
     {children}
-  </motion.div>
+  </div>
   )
 }
 

@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
-    "framer-motion": "^6.3.0",
     "ibm-watson": "^7.0.0",
     "moment": "^2.29.3",
     "next": "12.1.5",
