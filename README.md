@@ -8,7 +8,7 @@ TEA is a webapp, built with NextJS, that allows you to see the emotion analysis 
 
 #### Get tweet by statusId
 
-```http
+```bash
   GET /api/tweets/[statusId]
 ```
 | Parameter | Type     | Description                       |
@@ -17,7 +17,7 @@ TEA is a webapp, built with NextJS, that allows you to see the emotion analysis 
 
 #### Get twitter user's timeline
 
-```http
+```bash
   GET /api/tweets/userTimeline/[username]
 ```
 | Parameter | Type     | Description                       |
@@ -26,7 +26,7 @@ TEA is a webapp, built with NextJS, that allows you to see the emotion analysis 
 
 #### Get tag related tweets
 
-```http
+```bash
   GET /api/tweets/byTag/[tag]
 ```
 | Parameter | Type     | Description                       |
@@ -34,7 +34,7 @@ TEA is a webapp, built with NextJS, that allows you to see the emotion analysis 
 | `tag`      | `string` | **Required**.|
 
 #### Analyse Tweets with IBM's NLU Natural Language Understanding API
-```http
+```bash
   POST /api/ibmWatson
 ```
 
