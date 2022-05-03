@@ -54,7 +54,6 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   gap: 6rem;
   
   margin: 0 auto;
@@ -62,7 +61,17 @@ body {
   @media screen and(max-width: 992px) {
     flex-direction: column-reverse;
     justify-content: space-evenly;
-    gap: 1rem;
+    gap: 3rem;
     padding: 0 5rem;
+  }
+}
+
+.res-f-height {
+  height: 100vh;
+
+  @media screen and(max-width: 992px) {
+    height: auto;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }

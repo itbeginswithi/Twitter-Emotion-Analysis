@@ -4,8 +4,15 @@
     flex: 1;
     position: relative;
     
+    min-width: auto;
     max-width: 55rem;
     max-height: 55rem;
+    
+    
+    @media (min-width: 1600px){
+        max-width: 70rem;
+        max-height: 70rem;
+    }
 
     &::after{
         content:"";
@@ -18,5 +25,11 @@
         width: auto !important;
         max-width: 100% !important;
         max-height: 100% !important;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .analyseProfile__animation{
+        flex: 0;
     }
 }

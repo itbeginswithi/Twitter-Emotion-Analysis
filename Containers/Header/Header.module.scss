@@ -78,7 +78,7 @@
 
 .right{
     flex: 1;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 
@@ -89,12 +89,9 @@
     background: -webkit-radial-gradient(46.2rem, #02547A, transparent 50%);
     background: radial-gradient(46.2rem, #02547A, transparent 50%);
 
-    @media screen and (max-width: 992px){
-        height: 40rem;
-    }
+    @media screen and (min-width: 1200px){
+        display: flex;
 
-    @media screen and (max-width: 768px){
-        display: none;
     }
 
     &__twitterLogo{

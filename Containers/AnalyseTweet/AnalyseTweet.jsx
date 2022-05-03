@@ -94,7 +94,7 @@ const AnalyseTweet = () => {
   }
 
   return (
-    <div id="analyseTweet" className={`flex f-height section-padding`}>
+    <div id="analyseTweet" className={`flex res-f-height section-padding`}>
         <LottieAnimation lottieJson={womenLottie}/>
         <Searchbar handleSubmit={handleSubmit} searchByStatus description="Analyse a select tweet" placeholder="https://twitter.com/user/status/151458909249539">
           {

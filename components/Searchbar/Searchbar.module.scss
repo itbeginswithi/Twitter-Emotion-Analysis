@@ -11,16 +11,22 @@
     width: 100%;
 
     & h2{
-        text-align: center;
+        align-self: center;
         font-size: 1.8rem;
         color: #fff;
     }
 
     &_inputContainer{
-        max-width: 80%;        
-        min-width: 80%;
+        width: 100%;
         display: flex;
+
     }  
+
+    @media screen and (min-width: 1200px){
+        &_inputContainer{
+            width: 80%;
+        }
+    }
 
     &_btn{
         display: flex;
@@ -83,3 +89,12 @@
         color: rgba($secondary-color, .5);
     }
 } 
+
+
+
+
+@media screen and (max-width: 992px){
+    .analyseProfile__searchBar{
+        flex: 0;
+    }
+}

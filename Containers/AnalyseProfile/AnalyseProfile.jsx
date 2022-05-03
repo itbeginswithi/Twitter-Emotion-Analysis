@@ -129,16 +129,14 @@ const ProfileSearch = () => {
   }
 
   return (
-    <div id="analyseProfile" className={`flex f-height section-padding`}>
+    <div id="analyseProfile" className={`flex res-f-height section-padding`}>
       <LottieAnimation lottieJson={manLottieJson}/>
-      <div style={{flex: '1'}}>
-        <Searchbar 
-          description="Search By profile or Tag" 
-          placeholder="@elonmusk or #evs" 
-          handleSubmit={handleSubmit}
-        />
-        {error && <Error message={error} marginTop/>}
-      </div>
+      <Searchbar 
+        description="Search By profile or Tag" 
+        placeholder="@elonmusk or #evs" 
+        handleSubmit={handleSubmit}
+      />
+      {error && <Error message={error} marginTop/>}
     </div>
   )
 }
