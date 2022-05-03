@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { createPortal } from 'react-dom';
 
-import { Header, AnalyseProfile, AnalyseTweet } from '../container';
+import { Header, AnalyseProfile, AnalyseTweet } from '../containers';
 import TwitterTimeline from '../components/modal/twitter-timeline/twitter-timeline';
 
 const Home = () => {
